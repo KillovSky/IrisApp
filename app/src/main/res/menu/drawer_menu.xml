@@ -1,0 +1,42 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:title="🏠 Projeto Íris" />
+
+    <item
+        android:id="@+id/login"
+        android:title="🔒 Relogar" />
+
+    <item
+        android:id="@+id/google"
+        android:title="🌐 Google" />
+
+    <item
+        android:id="@+id/facebook"
+        android:title="📘 Facebook" />
+
+    <item
+        android:id="@+id/youtube"
+        android:title="🎬 YouTube" />
+
+    <item
+        android:id="@+id/instagram"
+        android:title="📷 Instagram" />
+
+    <item
+        android:id="@+id/twitter"
+        android:title="🐦 Twitter" />
+
+    <item
+        android:id="@+id/duckduckgo"
+        android:title="🦆 DuckDuckGo" />
+
+    <item
+        android:id="@+id/favorites"
+        android:title="⭐ Favoritos" />
+
+    <item
+        android:id="@+id/wikipedia"
+        android:title="📚 Wikipedia" />
+
+</menu>

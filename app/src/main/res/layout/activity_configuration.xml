@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/background_color">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/editar_configura_es"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/text_color" />
+
+    <ListView
+        android:id="@+id/configListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp" />
+
+    <Button
+        android:id="@+id/addConfigButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/adicionar_configura_o"
+        android:padding="12dp"
+        android:backgroundTint="@color/button_color"
+        android:textColor="@color/text_color"
+        android:layout_marginTop="16dp" />
+</LinearLayout>

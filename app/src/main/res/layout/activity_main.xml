@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@android:color/black">
+
+    <!-- Conteúdo principal -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Toolbar superior -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:titleTextColor="@android:color/white"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@android:color/white"
+                android:visibility="visible"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/backButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="❮"
+                    android:visibility="gone"
+                    android:background="?attr/selectableItemBackground"
+                    android:textColor="@android:color/white"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"/>
+
+                <Button
+                    android:id="@+id/forwardButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="❯"
+                    android:visibility="gone"
+                    android:background="?attr/selectableItemBackground"
+                    android:textColor="@android:color/white"
+                    android:layout_toEndOf="@id/backButton"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"/>
+
+                <Button
+                    android:id="@+id/homeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⌂"
+                    android:visibility="gone"
+                    android:background="?attr/selectableItemBackground"
+                    android:textColor="@android:color/white"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="8dp"/>
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- Botão de Menu -->
+        <Button
+            android:id="@+id/menuButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp"
+            android:textColor="@android:color/white"
+            tools:ignore="SpeakableTextPresentCheck"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Login Section -->
+        <LinearLayout
+            android:id="@+id/loginSection"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="32dp"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Texto IP -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ip"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Campo de IP -->
+            <EditText
+                android:id="@+id/ipAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Insira o endereço IP"
+                android:inputType="text"
+                android:padding="16dp"
+                android:background="@drawable/edit_text_background"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Texto Porta -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Porta HTTPS:"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:gravity="start"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Campo de Porta -->
+            <EditText
+                android:id="@+id/port"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Insira a porta HTTPS"
+                android:inputType="number"
+                android:padding="16dp"
+                android:background="@drawable/edit_text_background"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Checkbox para Skip SSL -->
+            <CheckBox
+                android:id="@+id/skipSsl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pular SSL/TLS (Localhost = ON!)"
+                android:textColor="@android:color/white"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Botão de Conectar -->
+            <Button
+                android:id="@+id/connectButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Conectar"
+                android:padding="16dp"
+                android:textSize="18sp"
+                android:backgroundTint="@color/button_color"
+                android:textColor="@android:color/white"
+                android:layout_marginBottom="16dp" />
+        </LinearLayout>
+
+        <!-- WebView (invisível inicialmente) -->
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/loginSection"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Barra de Progresso -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:visibility="gone"
+            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Small"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Toolbar inferior -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/bottom_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/urlEditText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.90"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:hint="URL"
+                        android:textSize="13sp"
+                    android:inputType="textUri"
+                    android:background="@drawable/edit_text_background"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@android:color/white"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"/>
+
+                    <Button
+                        android:id="@+id/favoritesButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.12"
+                    android:text="☆"
+                        android:textSize="20sp"
+                    android:visibility="gone"
+                    android:background="?attr/selectableItemBackground"
+                    android:textColor="@android:color/white"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:padding="0dp"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"/>
+
+                </LinearLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- NavigationView -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        android:background="@color/nav_drawer_background"
+        app:itemTextColor="@color/text_color"
+        app:itemIconTint="@color/text_color"
+        app:menu="@menu/drawer_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

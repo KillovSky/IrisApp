@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Projeto Íris</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="editar_configura_es">Editar Configurações</string>
+    <string name="adicionar_configura_o">Adicionar Configuração</string>
+    <string name="ip">IP:</string>
+</resources>
